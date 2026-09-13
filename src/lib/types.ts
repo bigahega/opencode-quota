@@ -890,6 +890,30 @@ export type OllamaCloudResult =
   | QuotaError
   | null;
 
+/** Single subscription window from the Meta `response.subscription_usage` SSE event */
+export interface MetaQuotaWindow {
+  /** Usage percentage, provider-reported, may exceed 100 */
+  usagePercent: number;
+  /** Remaining percentage, may be negative when over quota */
+  percentRemaining: number;
+  /** Canonical UTC reset instant, when the provider reports a valid `resets_at` */
+  resetTimeIso?: string;
+}
+
+/** Result from the Meta subscription usage probe */
+export type MetaQuotaResult =
+  | {
+      success: true;
+      /** 5-hour rolling window, when present */
+      fiveHour?: MetaQuotaWindow;
+      /** Weekly window, when present */
+      weekly?: MetaQuotaWindow;
+      /** Independent response fields that could not be used */
+      rowErrors?: string[];
+    }
+  | QuotaError
+  | null;
+
 /** Single normalized usage window from the OpenCode Go API. */
 export interface OpenCodeGoWindow {
   /** Raw API status after exact validation. */

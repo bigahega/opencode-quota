@@ -12,6 +12,7 @@ import { resolveGoogleAgyAuthIdentity } from "../lib/google-agy.js";
 import { resolveGeminiCliAuthIdentity } from "../lib/google-gemini-cli.js";
 import { resolveKiloApiKey } from "../lib/kilo-config.js";
 import { DEFAULT_KIMI_AUTH_CACHE_MAX_AGE_MS, resolveKimiAuthCached } from "../lib/kimi-auth.js";
+import { resolveMetaApiKey } from "../lib/meta-config.js";
 import {
   DEFAULT_MIMO_CONFIG_CACHE_MAX_AGE_MS,
   resolveMimoConfigCached,
@@ -235,6 +236,10 @@ export const PROVIDER_CACHE_POLICIES = {
   }),
   "ollama-cloud": resolvedCredentialPolicy("ollama-cloud", async () => {
     const resolved = await resolveOllamaCloudApiKey();
+    return resolved ? { credential: resolved.key } : null;
+  }),
+  meta: resolvedCredentialPolicy("meta", async () => {
+    const resolved = await resolveMetaApiKey();
     return resolved ? { credential: resolved.key } : null;
   }),
   "quota-providers": quotaProvidersCachePolicy,

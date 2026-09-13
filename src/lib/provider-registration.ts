@@ -363,6 +363,20 @@ export const QUOTA_PROVIDER_REGISTRATION_SOURCE = [
     },
   },
   {
+    id: "meta",
+    label: "Meta Muse",
+    runtimeIds: ["meta"],
+    synonyms: ["muse", "muse-spark", "meta-muse"],
+    shape: {
+      autoSetup: "yes",
+      authentication: "opencode_auth_api_key",
+      authFallbacks: ["env_api_key", "global_opencode_config"],
+      quota: "remote_api",
+      notes:
+        "Reads subscription windows from one minimal streaming probe; Meta exposes no pollable usage endpoint",
+    },
+  },
+  {
     id: "quota-providers",
     label: "Quota providers",
     runtimeIds: [],

@@ -200,6 +200,15 @@ describe("provider-metadata", () => {
         notes: "Queries the Ollama Cloud usage API; reports session and weekly usage fractions",
       },
       {
+        id: "meta",
+        autoSetup: "yes",
+        authentication: "opencode_auth_api_key",
+        authFallbacks: ["env_api_key", "global_opencode_config"],
+        quota: "remote_api",
+        notes:
+          "Reads subscription windows from one minimal streaming probe; Meta exposes no pollable usage endpoint",
+      },
+      {
         id: "quota-providers",
         autoSetup: "manual_env_config",
         authentication: "external_api_key",

@@ -28,6 +28,7 @@ Most providers work automatically. `Automatic` means OpenCode Quota reuses the c
 | Google AGY         | [Needs setup](#google-agy-quick-setup) | Remote API         | Quota              |
 | Google Antigravity | [Needs setup](#google-antigravity)     | Remote API         | Quota              |
 | Kilo Gateway       | Automatic                              | Remote API         | Quota and balance  |
+| Meta Muse          | Automatic                              | Remote API         | Quota              |
 | NanoGPT            | Automatic                              | Remote API         | Quota and balance  |
 | Ollama Cloud       | Automatic                              | Remote API         | Quota and usage    |
 | OpenAI             | Automatic                              | Remote API         | Quota              |
@@ -51,6 +52,7 @@ Most providers work automatically. `Automatic` means OpenCode Quota reuses the c
 | GitHub Copilot          | [Needs setup](#github-copilot)         | Remote API         | Budget and usage   |
 | Google AGY              | [Needs setup](#google-agy-quick-setup) | Remote API         | Quota              |
 | Google Antigravity      | [Needs setup](#google-antigravity)     | Remote API         | Quota              |
+| Meta Muse               | Automatic                              | Remote API         | Quota              |
 | NanoGPT                 | Automatic                              | Remote API         | Quota and balance  |
 | OpenAI                  | Automatic                              | Remote API         | Quota              |
 | OpenCode Zen            | [Needs setup](#opencode-zen)           | Dashboard scraping | Budget and balance |

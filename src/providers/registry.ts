@@ -22,6 +22,7 @@ import { googleAntigravityProvider } from "./google-antigravity.js";
 import { googleGeminiCliProvider } from "./google-gemini-cli.js";
 import { kiloProvider } from "./kilo.js";
 import { kimiCodeProvider } from "./kimi-code.js";
+import { metaProvider } from "./meta.js";
 import { xiaomiProvider } from "./mimo.js";
 import {
   minimaxChinaCodingPlanProvider,
@@ -66,6 +67,7 @@ const PROVIDERS_BY_ID = {
   "opencode-go": opencodeGoProvider,
   opencode: opencodeZenProvider,
   "ollama-cloud": ollamaCloudProvider,
+  meta: metaProvider,
   "quota-providers": quotaProvidersProvider,
 } satisfies Record<CanonicalQuotaProviderId, QuotaProvider>;
 

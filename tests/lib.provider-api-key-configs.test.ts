@@ -122,6 +122,21 @@ const providers = [
       };
     },
   },
+  {
+    name: "Meta Muse",
+    envVars: ["META_MODEL_API_KEY"],
+    providerKeys: ["meta"],
+    authKeys: ["meta"],
+    load: async () => {
+      const module = await import("../src/lib/meta-config.js");
+      return {
+        resolve: module.resolveMetaApiKey,
+        has: module.hasMetaApiKey,
+        diagnostics: module.getMetaKeyDiagnostics,
+        getConfigCandidates: module.getOpencodeConfigCandidatePaths,
+      };
+    },
+  },
 ] satisfies Array<ProviderApiKeyContractDescriptor<SimpleApiKeyContractModule>>;
 
 describe("simple provider API key configs", () => {
